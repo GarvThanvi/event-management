@@ -1,19 +1,20 @@
 import express from "express";
-import 'dotenv/config'
-import pool from './db.js';
+import "dotenv/config";
+
+import {
+  createEvent,
+  getEventDetails,
+  registerUserForEvent,
+} from "./event.controller.js";
 
 const app = express();
 const PORT = 8000;
 
-app.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT * FROM users');
-    res.send(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Internal Server Error');
-  }
-});
+app.use(express.json());
+
+app.post("/create-event", createEvent);
+app.get("/get-event/:eventId", getEventDetails);
+app.post("/register-user/:eventId", registerUserForEvent);
 
 app.listen(PORT, () => {
   console.log(`Server Running on Port ${PORT}`);
