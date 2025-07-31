@@ -9,7 +9,7 @@
 
 2. Installation:
 
-   git clone 
+   git clone https://github.com/GarvThanvi/event-management.git
    cd event-management-task
    npm install
 
