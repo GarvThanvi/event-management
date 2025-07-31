@@ -27,33 +27,33 @@
 5. Run the server
     Command - nodemon index.js / node index.js
 
-API Description
-Events
-POST /create-event: Create a new event
-GET /get-event/:eventId: Get event details
-GET /upcoming-events: List upcoming events (sorted by date then location)
-GET /event-stats/:eventId: Get event statistics
+## API Description
+    Events
+    POST /create-event: Create a new event
+    GET /get-event/:eventId: Get event details
+    GET /upcoming-events: List upcoming events (sorted by date then location)
+    GET /event-stats/:eventId: Get event statistics
 
-Registrations
-POST /register-user/:eventId: Register user for event
-DELETE /cancel-registration/:eventId: Cancel user registration
+    Registrations
+    POST /register-user/:eventId: Register user for event
+    DELETE /cancel-registration/:eventId: Cancel user registration
 
-Example Request and Reponses
+## Example Request and Reponses
 
-REQUEST:
-POST /create-event
-Content-Type: application/json
+    REQUEST:
+    POST /create-event
+    Content-Type: application/json
 
-{
-  "title": "Tech Conference",
-  "date": "2023-12-15",
-  "time": "09:00",
-  "location": "Convention Center",
-  "capacity": 500
-}
-RESPONSE:
-{
-  "success": true,
-  "eventId": 5,
-  "message": "Event created successfully"
-}
+    {
+    "title": "Tech Conference",
+    "date": "2023-12-15",
+    "time": "09:00",
+    "location": "Convention Center",
+    "capacity": 500
+    }
+    RESPONSE:
+    {
+    "success": true,
+    "eventId": 5,
+    "message": "Event created successfully"
+    }
